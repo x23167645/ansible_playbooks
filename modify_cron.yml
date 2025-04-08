@@ -1,0 +1,14 @@
+---
+- name: 8
+  hosts: all
+
+  tasks:
+  - name: Remove Cron Job
+    cron:
+      name: PATH
+      env: yes 
+      user: ansible
+      job: /tmp/scripts/
+      insertbefore: VAR
+      state: absent
+
