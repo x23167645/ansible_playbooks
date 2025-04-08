@@ -1,0 +1,13 @@
+---
+- name: 3
+  hosts: all
+
+  tasks:
+  - name: Copy Files 
+    copy:
+      src: /home/ansible/myfile.txt
+      dest: /tmp/
+      owner: ansible
+      group: ansible
+      mode: ugo=rw
+      backup: true

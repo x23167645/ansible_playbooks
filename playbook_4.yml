@@ -1,0 +1,19 @@
+---
+- name: 4
+  hosts: all
+
+  tasks:
+  - name: Create File
+    file:
+      path: /tmp/newfile.txt
+      state: absent
+      owner: ansible
+      group: ansible
+      mode: u=rwx,g=rw,o=r
+ 
+  - name: Create Directory
+    file:
+      path: /tmp/myfolder
+      state: absent
+
+

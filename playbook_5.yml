@@ -1,0 +1,9 @@
+---
+- name: 5
+  hosts: all
+
+  tasks:
+  - name: Change Permissions
+    file: 
+      path: /tmp/myfile.txt
+      mode: u=r,g=rw

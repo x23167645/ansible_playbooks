@@ -1,0 +1,9 @@
+---
+- name: 1
+  hosts: all
+
+  tasks:
+  - name: Test Connectivity
+    ping:
+  - name:
+    debug: msg="Alright!!"
