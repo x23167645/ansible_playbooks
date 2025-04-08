@@ -1,0 +1,14 @@
+--- 
+- name: 12
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Download File
+    get_url:
+      url: https://www.python.org/ftp/python/3.11.12/Python-3.11.12.tar.xz
+      dest: /tmp/scripts/
+      owner: ansible
+      group: ansible
+      mode: ugo=rwx
+

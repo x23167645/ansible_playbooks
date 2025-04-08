@@ -2,14 +2,19 @@
 - name: 2
   hosts: all
   become: true
+  vars:
+    - apps: nginx
 
   tasks:
   - name: Installing Nginx
     apt:
-      name: nginx
+      name: "{{ apps }}"
       state: present
+    tags: i-nginx
+
   - name:
     service:
-      name: nginx
+      name: "{{ apps }}"
       state: started
       enabled: true
+    tags: ss-nginx

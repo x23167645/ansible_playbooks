@@ -1,0 +1,16 @@
+---
+- name: 13
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Enable UFW
+    community.general.ufw:
+      state: enabled
+
+  - name: Enable service in UFW
+    community.general.ufw:
+      rule: allow
+      port: 80
+      proto: tcp
+

@@ -1,0 +1,24 @@
+---
+- name: 15
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Create Group QA
+    group:
+      name: QA
+      state: present
+    
+  - name: User Creation
+    user:
+      name: "{{ item }}"
+      comment: new user for QA team
+      home: "/home/{{ item }}"
+      shell: /bin/bash
+      groups: QA
+    loop:
+      - Harsh
+      - Mike
+      - Harvey
+
+
